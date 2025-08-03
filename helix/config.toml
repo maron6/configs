@@ -1,0 +1,17 @@
+theme = "hex_toxic"
+# theme = "catppuccin_frappe"
+# theme = "catppuccin_latte"
+# theme = "catppuccin_macchiato"
+ 
+[editor]
+line-number = "relative"
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" #show warnings/errors on cursor line inline
+other-lines = "error"
