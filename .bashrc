@@ -1,5 +1,8 @@
 HISTSIZE=10000 # No Limit on history count
 HISTFILESIZE=100000
+alias ls='lsd'
+alias la='lsd -a'
+alias lt ='lsd --tree'
 
 #  ToDo: play around with Nix VMs
 function nix-vm-run() {
