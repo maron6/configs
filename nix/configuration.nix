@@ -68,6 +68,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    # https://nixos.wiki/wiki/JACK
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -83,6 +84,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.thunderbird.enable= true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -94,20 +96,34 @@
   environment.systemPackages = with pkgs; [
     git # this needs to be first for flakes, at least during initial setup
     nil
+    ripgrep # line oriented search tool. Also used within some other tools (e.g. yazi and neovim)
     # lshw # ls for hardware
     vim
+    obsidian # Note taking app
+    yazi
+    ghostty
+    wl-clipboard
+    bitwarden-desktop
     # discord-ptb # move to gaming.nix?
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+  ];
+
+  environment.variables = {
+	TERMINAL = "ghostty";
+};
+  # https://nixos.wiki/wiki/Fonts
+  fonts.packages = with pkgs; [
+	nerd-fonts.fira-code
+  	nerd-fonts.droid-sans-mono 
   ];
 
 
-
   programs = {
+    /*
     neovim = {
       enable = true;
       defaultEditor = true;
-    };
+    }; */
     appimage = { enable = true ;};
   };
 
@@ -125,8 +141,8 @@
   # services.openssh.enable = true;
 
 
-  services.flatpak.enable = true;
-  xdg.portal.enable = true; # for flatpak
+  #services.flatpak.enable = true;
+  #xdg.portal.enable = true; # for flatpak
 
 
 
