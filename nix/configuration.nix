@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./users.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./users.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -80,16 +80,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
-
   # Install firefox.
   programs.firefox.enable = true;
-  programs.thunderbird.enable= true;
+  programs.thunderbird.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.settings.download-buffer-size = 524288000;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -104,27 +105,43 @@
     ghostty
     wl-clipboard
     bitwarden-desktop
+    github-desktop
+    nixfmt-rfc-style
     # discord-ptb # move to gaming.nix?
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   ];
 
   environment.variables = {
-	TERMINAL = "ghostty";
-};
+    TERMINAL = "ghostty";
+  };
   # https://nixos.wiki/wiki/Fonts
-  fonts.packages = with pkgs; [
-	nerd-fonts.fira-code
-  	nerd-fonts.droid-sans-mono 
-  ];
-
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.fira-code
+      # nerd-fonts.droid-sans-mono
+      nerd-fonts.meslo-lg
+      font-awesome
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [
+          "Fira Code"
+          "Meslo LG M Regular Nerd Font Complete Mono"
+        ];
+      };
+    };
+  };
 
   programs = {
     /*
-    neovim = {
+      neovim = {
+        enable = true;
+        defaultEditor = true;
+      };
+    */
+    appimage = {
       enable = true;
-      defaultEditor = true;
-    }; */
-    appimage = { enable = true ;};
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -140,11 +157,8 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-
   #services.flatpak.enable = true;
   #xdg.portal.enable = true; # for flatpak
-
-
 
   # Open ports in the firewall. - ToDo: identify specific ports
   # networking.firewall.allowedTCPPorts = [ ... ];
