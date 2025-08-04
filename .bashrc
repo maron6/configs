@@ -2,13 +2,22 @@ HISTSIZE=10000 # No Limit on history count
 HISTFILESIZE=100000
 alias ls='lsd'
 alias la='lsd -a'
-alias lt='lsd --tree'
+# alias lt='lsd --tree --depth 3'
+function lt() {
+		if [ -z "$1" ]; then
+				lsd --tree  --depth 2
+		else
+				let d=$(( "$1" + 0))
+				lsd --tree --depth $d
+		fi
+
+}
 
 #  ToDo: play around with Nix VMs
 function nix-vm-run() {
 	# Default. See https://nixos.wiki/wiki/Nixos-rebuild - `build-vm` option
 	nixVM=""
-	if [ -z "$1"]; then
+	if [ -z "$1" ]; then
 		echo "Default Profile"
 		nixVM="/etc/nixos/result/bin/run-nixos-vm"
 	else	
@@ -20,7 +29,7 @@ function nix-vm-run() {
 
 	# return 0
 	# if VM is found and can be executed, then call running it.
-	if [ -x "$nixVM"]; then
+	if [ -x "$nixVM" ]; then
 		"$nixVM"
 	else
 		# NOTE: Backticks will create a subcommand and try to call that.... so don't do that...
@@ -38,3 +47,4 @@ function y() {
 
 export -f nix-vm-run
 export -f y
+export -f lt
