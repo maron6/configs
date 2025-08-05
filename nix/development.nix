@@ -14,6 +14,8 @@
         ];
   */
 
+  # Note: in nvim - `:!nixfmt %<ENTER>`
+
   environment.systemPackages = with pkgs; [
     wget
     unzip
@@ -25,7 +27,8 @@
     luajitPackages.luarocks-nix
     stylua
     helix
-	lazygit # Try out later
+    lazygit 
+    duckdb
   ];
 
   services.ollama = {
