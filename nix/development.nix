@@ -25,6 +25,7 @@
     luajitPackages.luarocks-nix
     stylua
     helix
+	lazygit # Try out later
   ];
 
   services.ollama = {
