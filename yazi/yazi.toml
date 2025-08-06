@@ -19,7 +19,11 @@ prepend_previewers = [
 #  { name = "*.txt", run = "duckdb" },  # only if dealing with misnamed csv/tsv files
   { name = "*.xlsx", run = "duckdb" },  
   { name = "*.db", run = "duckdb" },
-  { name = "*.duckdb", run = "duckdb" }
+  { name = "*.duckdb", run = "duckdb" },
+  { name = "*.md", run = "rich-preview" },
+   { name = "*.rst", run = "rich-preview" },
+   { name = "*.ipynb", run="rich-preview" },
+
 ]
 
 prepend_preloaders = [  

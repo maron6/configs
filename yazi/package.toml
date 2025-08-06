@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "GrzegorzKozub/mdcat"
-rev = "7b7380a"
-hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
 use = "KKV9/compress"
 rev = "9fc8fe0"
 hash = "2ad086899bf368fba211a33d8f68c39d"
@@ -23,10 +18,15 @@ use = "wylie102/duckdb"
 rev = "3f8c863"
 hash = "87b9233a74325e95011670ed20bbd0d4"
 
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "843c3fa"
+hash = "b4040931f0d2f9670ddb4923e55cd881"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "d3fd3a5"
-hash = "e6c5beeb1da3199355734273ee452a7f"
+rev = "9cd2ac4"
+hash = "bc3478e46ebfc411d611e1ccaf04d26a"
 
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"

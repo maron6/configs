@@ -110,6 +110,7 @@
     nixfmt-rfc-style
     lsd
     oh-my-posh
+    rich-cli
   ];
 
   environment.variables = {
