@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     discord-ptb
     bluez
@@ -10,7 +13,7 @@
     enable = true;
     # remotePlay.openFirewall=true; #open ports for steam remote play - might not need
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for steam server
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
+    extraCompatPackages = [pkgs.proton-ge-bin];
   };
   # Enable bluetooth for ps5 controller
   hardware.bluetooth.enable = true;
