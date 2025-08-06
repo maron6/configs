@@ -27,7 +27,7 @@
     luajitPackages.luarocks-nix
     stylua
     helix
-    lazygit 
+    lazygit
     duckdb
   ];
 
