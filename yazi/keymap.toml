@@ -39,14 +39,14 @@ run = "plugin duckdb +1"
 desc = "Scroll one column to right"
 
 [[mgr.prepend_keymap]]
-on = ["\"", "d", "o"]
+on = ["\"", "d"] #, "o"] # ui option for duckdb not really useful for me currently, so simplifying
 run = "plugin duckdb -open"
 desc = "Open with duckdb"
 
-[[mgr.prepend_keymap]]
-on = ["\"", "d", "u"]
-run = "plugin duckdb -ui"
-desc = "Open with duckdb UI"
+#[[mgr.prepend_keymap]]
+# on = ["\"", "d", "u"]
+# run = "plugin duckdb -ui"
+# desc = "Open with duckdb UI"
 
 
 
