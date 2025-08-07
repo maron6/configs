@@ -42,5 +42,21 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = catppuccin-frappe
+ theme = catppuccin-frappe
+# theme = nordfox
 
+# greenish
+# theme = Ryuuko
+
+# theme = Horizon
+
+
+# theme = tokyonight_moon
+
+
+#font-family = Noto Serif
+# Hack is kind of a close second choice
+ # font-family = Hack
+font-family = FiraCode Nerd Font Mono
+ # font-family = FiraCode Nerd Font Propo
+# font-family = DejaVu Sans Mono
