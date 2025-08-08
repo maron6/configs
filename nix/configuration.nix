@@ -97,7 +97,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git # this needs to be first for flakes, at least during initial setup
-    git-credential-manager
+    # git-credential-manager # ssh key instead
     nil
     ripgrep # line oriented search tool. Also used within some other tools (e.g. yazi and neovim)
     # lshw # ls for hardware
