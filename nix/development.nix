@@ -21,6 +21,7 @@
     unzip
     gcc
     zig
+    zellij
     python314 # Neovim plugins? Potentially needed, going through healthcheck...
     # pip:
     # rustup # for this one, can likely just use nix-shell
