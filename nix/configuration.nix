@@ -113,6 +113,7 @@
     lsd
     oh-my-posh
     rich-cli
+    kdePackages.kdeconnect-kde # allow connection with phone for sharing files over wifi
   ];
 
   environment.variables = {
