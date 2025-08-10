@@ -113,7 +113,6 @@
     lsd
     oh-my-posh
     rich-cli
-    kdePackages.kdeconnect-kde # allow connection with phone for sharing files over wifi
   ];
 
   environment.variables = {
@@ -143,6 +142,7 @@
       enable = true;
     };
   };
+  programs.kdeconnect.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
