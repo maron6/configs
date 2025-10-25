@@ -3,15 +3,14 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   /*
-    # For usage of overlay, need to read up into flakes more and get a better understanding of what's actually going on in there.
-       environment.systemPackages = with pkgs; [
-           nvim-pkg # default from overlay
-    #ollama # use as a service instead
-    #wl-clipboard # in main configuration since potentially useful outside of neovim
-       ];
+  # For usage of overlay, need to read up into flakes more and get a better understanding of what's actually going on in there.
+     environment.systemPackages = with pkgs; [
+         nvim-pkg # default from overlay
+  #ollama # use as a service instead
+  #wl-clipboard # in main configuration since potentially useful outside of neovim
+     ];
   */
 
   # Note: in nvim - `:!nixfmt %<ENTER>`
@@ -32,6 +31,7 @@
     duckdb
   ];
 
+  /*
   services.ollama = {
     enable = true;
     # Optional: preload models, see https://ollama.com/library
@@ -43,12 +43,13 @@
     ];
     acceleration = "cuda";
   };
+  */
 
   # toDo: Look into nixvim - https://github.com/nix-community/nixvim
   /*
-    let
-    	  luaConfig = builtins.readFile ./init.lua
-    	in {
+  let
+  	  luaConfig = builtins.readFile ./init.lua
+  	in {
   */
   programs.neovim = {
     enable = true;
@@ -60,17 +61,17 @@
   };
 
   /*
-    programs.nixvim = {
-      enable = true;
-      coloschemes.catpuccin.enable = true;
-      plugins.lualine.enable = true;
-      clipboard = {
-    	providers = {
-    		wl-copy.enable = true; # wayland
-    	};
-
-      };
+  programs.nixvim = {
+    enable = true;
+    coloschemes.catpuccin.enable = true;
+    plugins.lualine.enable = true;
+    clipboard = {
+  	providers = {
+  		wl-copy.enable = true; # wayland
+  	};
 
     };
+
+  };
   */
 }
